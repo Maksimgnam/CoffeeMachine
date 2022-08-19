@@ -1,0 +1,454 @@
+6<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Document</title>
+    <style>
+              *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+       
+        .coffee__machine{
+         
+            width: 300px;
+            height: 280px;
+            position: absolute;
+            top: calc(50% - 140px);
+            left: calc(50% - 150px);
+        }
+        .coffee__header{
+            width: 300px;
+            height: 70px;
+            top: 0;
+            left: 0;
+            border-radius: 10px;
+            background-color: lightgrey;
+        }
+        .stop{
+            color: white;
+            text-align: center;
+            width: 25px;
+            height: 25px;
+            position: absolute;
+            top: 25px;
+            border-radius: 50%; 
+            background-color: #282323;   
+            left: 15px;  
+   
+
+        }
+        .addwater{
+            color: white;
+            text-align: center;
+            width: 25px;
+            height: 25px;
+            position: absolute;
+            top: 25px;
+            background-color: #282323;
+            border-radius: 50%;    
+            left: 45px;     
+
+        }
+        .addMilk{
+            color: white;
+            text-align: center;
+            width: 25px;
+            height: 25px;
+            position: absolute;
+            top: 25px;
+            background-color: #282323;
+            border-radius: 50%;    
+            left: 75px;     
+
+        }
+        .runBtn{
+            color: white;
+            text-align: center;
+            border: 5px solid #d81717;
+
+            width: 35px;
+            height: 35px;
+            position: absolute;
+            top: 21px;
+            background-color:  red;
+            border-radius: 50%;    
+            left: 125px;     
+
+        }
+        span{
+            position: relative;
+            top: 1px;
+        }
+        .s{
+            position: relative;
+            top: 3px;
+        }
+        .m{
+            position: relative;
+            top: 2px;
+           
+        }
+        .blockes{
+            display: flex;
+            width: 80px;
+            height: 40px;
+           
+        }
+        .block{
+            position: relative;
+            top: 10px;
+            left: 190px;
+            width: 10px;
+            height: 10px;
+            background-color:  grey;
+            opacity: 0.4;
+            padding: 10px;
+            margin: 6px;
+            border-radius: 50%;
+        }
+        .coffee__cont{
+            width: 90%;
+            height: 190px;
+            position: absolute;
+            left: 15px;
+            background-color: #bcb0af;
+        }
+        .coffee__medium{
+           
+            width: 83%;
+            height: 120px;
+            background-color: #776f6e;
+            position: absolute;
+            left: 25px;
+            bottom: 0;
+            
+            border-radius: 20px 20px 0 0;       
+        }
+        .coffee__down{
+            width: 95%;
+            height: 10px;
+            background-color: black;
+            position: relative;
+            top: 190px;
+            left: 9px;
+            border-radius: 10px;
+            background-color:  grey;
+        }
+        .coffee__down__two{
+            width: 100%;
+            height: 20px;
+            background-color: black;
+            position: relative;
+            top: 190px;
+            left: 3px;
+            
+            border-radius: 10px;
+            background-color:  black;
+        }
+        .cup{
+            position: relative;
+            top: 35px;
+            left: 34%;
+            width: 70px;
+            height: 65px;
+            background-color: white;
+            border-radius: 0 0 10px 10px;  
+        }
+        .cup::after {
+            content: "";
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: 6px;
+            left: 50px;
+            border: 5px solid #FFF;
+            border-radius: 50%;
+        }    
+        .coffee__viley{
+            background-color: #282323;
+            width: 80px;
+            height: 30px;
+            position: relative;
+            left: 33%;
+
+        }    
+        .coffee__viley-down{
+            background-color: #282323;
+            width: 60px;
+            height: 30px;
+            position: relative;
+            top: 0;
+            left: 36.5%;
+            border-radius: 0 0 15px 15px;
+
+        } 
+        .coffee__viley-down-two{
+            background-color: #282323;
+            width: 20px;
+            height: 10px;
+            position: relative;
+            top: 0;
+            left: 117px;
+            
+
+        } 
+
+        .potik{
+            background-color: #282323;
+            width: 12px;
+            height: 55px;
+            position: relative;
+            top: 100px;
+            left: 136px;
+            z-index: 2;
+            background-color: #74372b;
+           
+        }
+        
+        .stakan{
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            border-radius: 0 0 10px 10px;
+            background-color: white;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            position: absolute;
+            left: 200px;
+
+            top: 310px;
+            
+
+            
+        }
+        .water{
+            text-align: center;
+            height: 20px;
+            width: 250px;
+            opacity: 0.6;
+            background-color: blue;
+            border-radius: 0 0 10px 10px;
+
+        }
+        .cabel{
+            position: absolute;
+            top: 500px;
+            width: 230px;
+            height: 3px;
+            background-color: black;
+            left: 400px;
+        }
+        .milk{
+       
+            width: 12px;
+            height: 55px;
+            position: relative;
+            top: 100px;
+            left: 136px;
+            z-index: 2;
+            background-color:  white;
+      
+            }  
+
+            @media (max-width: 720px){
+                .stakan{
+                    position: relative;
+                    top: 44px;
+                    left: 170px;
+                    width: 150px;
+                    height: 150px;
+
+
+                }
+                .cabel{
+                    display: none;
+                }
+
+                
+            }
+            
+
+          
+
+    </style>
+</head>
+<body>
+    <div class="stakan">
+        <div class="water" id="water"></div>
+    </div>
+    <div class="cabel"></div>
+   
+
+    <div class="coffee__machine">
+        
+        <div class="coffee__header">
+            <div class="stop" id="stopBtn">
+                <span class="s">s</span>
+
+            </div>
+            <div class="addwater" id="addWater">
+                <span class="s" id="plus">+</span>
+            </div>
+            <div class="addMilk" id="addMilk">
+                <span class="m">m</span>
+            </div>
+            <div class="runBtn" id="runBtn">
+                <span>r</span>
+            </div>
+            <div class="blockes">
+                <div class="block" ></div>
+                <div class="block"></div>
+                <div class="block"></div>
+            </div>
+            <div class="potik" id="potik">
+               
+          
+
+            </div>
+            <div class="milk" id="milk"></div>        
+
+        </div>
+       
+        <div class="coffee__cont">
+       
+            <div class="coffee__viley"></div>
+            <div class="coffee__viley-down"></div>
+            <div class="coffee__viley-down-two"></div>
+        </div>
+        <div class="coffee__medium">
+            <div class="cup"></div>
+        </div>
+        <div class="coffee__down"></div>
+        <div class="coffee__down__two"></div>
+    </div>
+ 
+
+    <script>
+        function CoffeMachine(power){
+            this.waterAmount = 0;
+
+            const WATER_HEAD_CAPACITY = 4200;
+            let timerId;
+            let getBoilTime = function(){
+                let t = this.waterAmount * WATER_HEAD_CAPACITY * 80 / power;
+                console.log(t)
+                return t;
+            }.bind(this)
+            let onReady = function(){
+                console.log("coffee ready")
+                this.waterAmount -=100;
+                console.log( this.waterAmount )
+              
+            }.bind(this)
+            this.run = function(){
+                timerId = setTimeout(onReady,getBoilTime())
+            }
+           this.stop = function(){
+            clearTimeout(timerId)
+            console.log("coffee stoped")
+           }
+
+        }
+        let coffeeMachine = new CoffeMachine(10000);
+
+        coffeeMachine.waterAmount = 200;
+
+
+        tippy('#runBtn', {
+            content: 'run',
+            placement: 'top',
+        });
+        tippy('#plus', {
+            content: 'add water',
+            placement: 'top',
+        });
+        tippy('#stopBtn', {
+            content: 'stop',
+            placement: 'top',
+        });
+        tippy('#addMilk', {
+            content: 'add milk',
+            placement: 'top',
+        });
+
+        $('#potik').hide(0);
+
+
+    
+      
+      
+      
+      
+
+   
+
+       $('#runBtn').click(function(){
+        if(coffeeMachine.waterAmount > 0){
+            coffeeMachine.run()
+        } else{
+            console.log('add water')
+        }
+        $('#potik').show(300);
+      
+
+        
+
+       })
+       $('#stopBtn').click(function(){
+        coffeeMachine.stop()
+        $('#potik').hide(200);
+        $('#milk').hide(300)
+
+       })
+       $('#addWater').click(function(){
+            if(coffeeMachine.waterAmount<1000){
+                coffeeMachine.waterAmount += 100;
+                console.log(coffeeMachine.waterAmount)
+
+            }
+
+       })
+
+       let water = 10;
+       
+      
+       plus.onclick = function(){
+           if(water<=90){
+               water += 10;
+               $('#water').css('height', water + '%')
+               
+           }
+       }
+       $('#milk').hide(0);
+      
+
+      $('#addMilk').click(function(){
+         
+              $('#milk').show(300)
+          
+
+
+      })
+      $('#addMilk').dbclick(function(){
+         
+         $('#milk').hide(300)
+     
+
+ })
+    
+
+      
+
+
+    </script>
+</body>
+</html>
